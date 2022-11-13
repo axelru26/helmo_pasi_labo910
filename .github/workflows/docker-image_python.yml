@@ -1,9 +1,6 @@
 name: Helloworld Docker Build
-
 on: [push]
-
 jobs:
-
   build-helloworld:
     runs-on: ubuntu-latest
     steps:
