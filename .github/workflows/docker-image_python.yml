@@ -10,6 +10,6 @@ jobs:
         run : | 
           docker build -t helloworld-app .
       - name : Azure scan
-        uses: Azure/container-scan@v0.2
+        uses: Azure/container-scan@v0.1
         with:
           image-name: helloworld-app
