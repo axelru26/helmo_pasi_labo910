@@ -1,17 +1,11 @@
 name: Helloworld Docker Build
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
 
   build-helloworld:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository code
         uses : actions/checkout@v3
