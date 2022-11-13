@@ -9,7 +9,12 @@ jobs:
       - name : Hello World Docker
         run : | 
           docker build -t helloworld-app .
-      - name : Azure scan
-        uses: Azure/container-scan@v0.1
+      - name : Azure Container Registery Login 
+        uses: Azure/docker-login@v1
         with:
-          image-name: helloworld-app
+          login-server: principeavancedocker.azurecr.io
+          username: ${{ secrets.ACR_LOGIN }}
+          password: ${{ secrets.ACR_PASSWORD }}
+          
+      - run: docker tag helloworld-app principeavancedocker.azurecr.io/helloworld-app
+      - run: docker push principeavancedocker.azurecr.io/helloworld-app
